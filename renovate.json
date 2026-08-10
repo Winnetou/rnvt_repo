@@ -10,20 +10,27 @@
     "requireConfig": "optional",
     "branchPrefix": "renovate-py/",
     "poetry": {
-      "enabled": true
-    },
-    "lockFileMaintenance": {
-      "enabled": true,
-      "schedule": [
-        "before 4am on monday"
-      ]
-    },
-    "packageRules": [
-      {
-        "matchManagers": [
-          "poetry"
-        ],
-        "rangeStrategy": "bump"
-      }
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 4am on monday"
     ]
-  }
+  },
+  "packageRules": [
+    {
+      "matchManagers": [
+        "poetry"
+      ],
+      "rangeStrategy": "bump"
+    },
+    {
+      "matchPackageNames": [
+        "*"
+      ],
+      "groupName": "all dependencies",
+      "groupSlug": "all-deps"
+    }
+  ]
+}
